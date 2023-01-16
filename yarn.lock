@@ -654,37 +654,37 @@
   dependencies:
     "@types/node" "*"
 
-"@unipasswallet/ethereum-provider@^0.0.13-alpha.1":
-  version "0.0.13-alpha.1"
-  resolved "https://registry.npmmirror.com/@unipasswallet/ethereum-provider/-/ethereum-provider-0.0.13-alpha.1.tgz#88ae9f4556c6180af3c0313dcc7567a11c46d7fa"
-  integrity sha512-xPLaLNf5zg/No0HJF1fkPN9McUB7+Hqph+hjni1cRMGrM4jknOqPfjUDbHiEC2Hvo6plyxZQZiXpBx/JBsbStw==
+"@unipasswallet/ethereum-provider@^0.0.13-alpha.2":
+  version "0.0.13-alpha.2"
+  resolved "https://registry.yarnpkg.com/@unipasswallet/ethereum-provider/-/ethereum-provider-0.0.13-alpha.2.tgz#29e1111c1cf2c05ad4e01b6499e82752fb31fc4f"
+  integrity sha512-ELeig03VnRoE56L/5FDvN6F1Ax0IfT9VVdLkuWsJe/uBclsBMvACwBghAqPhMjAespfV6e0Pw2KPr150Vf3WJA==
   dependencies:
-    "@unipasswallet/popup-sdk" "^0.0.13-alpha.1"
-    "@unipasswallet/popup-types" "^0.0.13-alpha.1"
+    "@unipasswallet/popup-sdk" "^0.0.13-alpha.2"
+    "@unipasswallet/popup-types" "^0.0.13-alpha.2"
     eip1193-provider "1.0.1"
     events "^3.3.0"
 
-"@unipasswallet/popup-sdk@^0.0.13-alpha.1":
-  version "0.0.13-alpha.1"
-  resolved "https://registry.npmmirror.com/@unipasswallet/popup-sdk/-/popup-sdk-0.0.13-alpha.1.tgz#e1affe3055bceb8587ea0b40146c05494a07bb84"
-  integrity sha512-ylTcZsmokZ0eQDJ6gbwdwYORdkUTyRxmWHtsa5ohEP9IxWKNCJYZndRtBtZvXXG7j/s2+VGrfb2t7SM7BVtj8w==
+"@unipasswallet/popup-sdk@^0.0.13-alpha.2":
+  version "0.0.13-alpha.2"
+  resolved "https://registry.yarnpkg.com/@unipasswallet/popup-sdk/-/popup-sdk-0.0.13-alpha.2.tgz#153156723ee9215b320fcdf71ea61b8a170e2171"
+  integrity sha512-CveeqYxO5yNv7cxpqMPn20Juxxm3IKBwWhywk3Du4dofOyrgCJPoS1syK9LnR02moY/ATAnqQQTVgwwPsCnvhw==
   dependencies:
-    "@unipasswallet/popup-types" "^0.0.13-alpha.1"
-    "@unipasswallet/popup-utils" "^0.0.13-alpha.1"
+    "@unipasswallet/popup-types" "^0.0.13-alpha.2"
+    "@unipasswallet/popup-utils" "^0.0.13-alpha.2"
     buffer "^6.0.3"
     ethers "^5.7.1"
 
-"@unipasswallet/popup-types@^0.0.13-alpha.1":
-  version "0.0.13-alpha.1"
-  resolved "https://registry.npmmirror.com/@unipasswallet/popup-types/-/popup-types-0.0.13-alpha.1.tgz#2b363a9477d4510299472a7feb9c97d7ba1aad57"
-  integrity sha512-DDoCceHjoVlLa3hEtHhNrhMBT5VEDexmm8tryDdKGjIzVp9CfEibLkzhg27nhprFu6C/gE/VOMr98hCB1VtldA==
+"@unipasswallet/popup-types@^0.0.13-alpha.2":
+  version "0.0.13-alpha.2"
+  resolved "https://registry.yarnpkg.com/@unipasswallet/popup-types/-/popup-types-0.0.13-alpha.2.tgz#caa85732da2f75744971e8289b069a7329eb1e10"
+  integrity sha512-tsdoLlVMcqaOqQH3gQtujjtMfurg8yqeqgVOKxC3AlbFnTveQ6Fs3L+oaFG9mVbypRdMq9G3fGkteOwcqGsRwA==
 
-"@unipasswallet/popup-utils@^0.0.13-alpha.1":
-  version "0.0.13-alpha.1"
-  resolved "https://registry.npmmirror.com/@unipasswallet/popup-utils/-/popup-utils-0.0.13-alpha.1.tgz#8e0a36d61f46031d870bd7327d2ff51b1c625a91"
-  integrity sha512-8ymVY7qq5PttiUkce/m4DjEbRWCZnMCBWo/96YSEyEvj4Pfpj1lvZjvSGS2v9g2OaL/1EXgQtat0ffTPAktyLg==
+"@unipasswallet/popup-utils@^0.0.13-alpha.2":
+  version "0.0.13-alpha.2"
+  resolved "https://registry.yarnpkg.com/@unipasswallet/popup-utils/-/popup-utils-0.0.13-alpha.2.tgz#8fe7598eff4843312c52f269f3d5d230e6e862f5"
+  integrity sha512-oVYiEtXEvE4vtlR1MDPz16xlSIE0Mq8oi5Bpx7eNwREFTaoRAG0MKTBHlxF0lKB5PD/XzD4S49cm/xZBcePMlg==
   dependencies:
-    "@unipasswallet/popup-types" "^0.0.13-alpha.1"
+    "@unipasswallet/popup-types" "^0.0.13-alpha.2"
     bn.js "^4.11.8"
     concurrently "^7.4.0"
     ethereum-cryptography "^1.1.2"

@@ -1,6 +1,6 @@
 {
   "name": "@unipasswallet/wagmi-connector",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Wagmi connector for the UniPass wallet",
   "main": "dist/index.js",
   "scripts": {
@@ -19,14 +19,14 @@
   "homepage": "https://github.com/UniPass/wagmi-connector#readme",
   "dependencies": {
     "wagmi": "^0.7.5",
-    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.1",
-    "@unipasswallet/popup-types": "^0.0.13-alpha.1",
+    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.2",
+    "@unipasswallet/popup-types": "^0.0.13-alpha.2",
     "ethers": "^5.7.2"
   },
   "peerDependencies": {
     "wagmi": "^0.7.5",
-    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.1",
-    "@unipasswallet/popup-types": "^0.0.13-alpha.1",
+    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.2",
+    "@unipasswallet/popup-types": "^0.0.13-alpha.2",
     "ethers": "^5.7.2"
   },
   "devDependencies": {
