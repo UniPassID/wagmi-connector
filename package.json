@@ -1,0 +1,38 @@
+{
+  "name": "@unipasswallet/wagmi-connector",
+  "version": "0.0.1-alpha.1",
+  "description": "Wagmi connector for the UniPass wallet",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "check": "npm run lint && npm run format",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniPass/wagmi-connector.git"
+  },
+  "author": "lay2",
+  "license": "ISC",
+  "homepage": "https://github.com/UniPass/wagmi-connector#readme",
+  "dependencies": {
+    "wagmi": "^0.7.5",
+    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.1",
+    "@unipasswallet/popup-types": "^0.0.13-alpha.1",
+    "ethers": "^5.7.2"
+  },
+  "peerDependencies": {
+    "wagmi": "^0.7.5",
+    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.1",
+    "@unipasswallet/popup-types": "^0.0.13-alpha.1",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.8.4"
+  }
+}
