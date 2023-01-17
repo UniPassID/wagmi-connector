@@ -18,14 +18,14 @@
   "license": "ISC",
   "homepage": "https://github.com/UniPass/wagmi-connector#readme",
   "dependencies": {
-    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.3",
-    "@unipasswallet/popup-types": "^0.0.13-alpha.3",
+    "@unipasswallet/ethereum-provider": "0.0.13-alpha.3",
+    "@unipasswallet/popup-types": "0.0.13-alpha.3",
     "ethers": "^5.7.2",
     "wagmi": "^0.7.5"
   },
   "peerDependencies": {
-    "@unipasswallet/ethereum-provider": "^0.0.13-alpha.3",
-    "@unipasswallet/popup-types": "^0.0.13-alpha.3",
+    "@unipasswallet/ethereum-provider": "0.0.13-alpha.3",
+    "@unipasswallet/popup-types": "0.0.13-alpha.3",
     "ethers": "^5.7.2",
     "wagmi": "^0.7.5"
   },
