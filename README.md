@@ -2,26 +2,29 @@
 
 Wagmi connector for the [UniPass](https://unipass.vip/) wallet.
 
-## Install
+## Installation
 
 ```shell
-  npm install @unipasswallet/wagmi-connector @unipasswallet/ethereum-provider
+  npm install @unipasswallet/wagmi-connector
 ```
 or
 ```shell
-  yarn add @unipasswallet/wagmi-connector @unipasswallet/ethereum-provider
+  yarn add @unipasswallet/wagmi-connector
 ```
-```
 
+## Parameters
 
-## Params
+* `chains` -- Chains supported by app. This is the same parameter as would be passed to other RainbowKit wallets..
 
-* `chains` -- Chains supported by app.
+* `options.connect` -- Connection options for the default networkId, name of the app.
 
-* `options.connect` -- Connection options for the default networkId, name of the app, etc...
+* `options.connect.chainId` -- Default chainId.
 
+* `options.connect.returnEmail` -- If true, email will return when connect function been called.
 
-## Example of usage
+* `options.connect.appSettings` -- Config appName, appIcon and theme.
+
+## Usage
 
 ```js
   import { UniPassConnector } from "@unipasswallet/wagmi-connector'
@@ -33,6 +36,8 @@ or
         returnEmail: false,
         appSettings: {
           appName: "wagmi demo",
+          appIcon: "your icon url",
+          theme: UniPassTheme.dark,
         },
       },
     },
@@ -51,3 +56,7 @@ or
     provider,
   });
 ```
+
+## Example
+
+A demo app for Wagmi is available [here](https://up-wagmi-demo.vercel.app/)
