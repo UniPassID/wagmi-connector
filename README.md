@@ -1,7 +1,5 @@
 # wagmi-connector
 
-Wagmi connector for the [UniPass](https://unipass.vip/) wallet.
-
 ## Installation
 
 ```shell
