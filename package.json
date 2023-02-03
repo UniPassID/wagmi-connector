@@ -2,21 +2,48 @@
   "name": "@unipasswallet/wagmi-connector",
   "version": "1.0.1",
   "description": "Wagmi connector for the UniPass wallet",
+  "license": "MIT",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "check": "npm run lint && npm run format",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UniPass/wagmi-connector.git"
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "author": "lay2",
-  "license": "ISC",
-  "homepage": "https://github.com/UniPass/wagmi-connector#readme",
+  "module": "dist/wagmi-connector.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/wagmi-connector.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/wagmi-connector.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "dependencies": {
     "@unipasswallet/ethereum-provider": "^1.0.1",
     "@unipasswallet/popup-types": "^1.0.1",
@@ -30,9 +57,11 @@
     "wagmi": "^0.11.0"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.8.4"
+    "@size-limit/preset-small-lib": "^8.1.2",
+    "husky": "^8.0.3",
+    "size-limit": "^8.1.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
   }
 }

@@ -55,8 +55,8 @@ export class UniPassConnector extends Connector<UniPassProvider, Options | undef
     await this.provider.disconnect();
   }
 
-  async getAccount(): Promise<`0x${string}`> {
-    return Promise.resolve(this.upAccount?.address as `0x${string}`);
+  async getAccount(): Promise<any> {
+    return Promise.resolve(this.upAccount?.address || "");
   }
 
   async getChainId(): Promise<number> {
