@@ -12,18 +12,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "prettier": {
     "printWidth": 80,
@@ -32,21 +22,20 @@
     "trailingComma": "es5"
   },
   "author": "lay2",
-  "module": "dist/wagmi-connector.esm.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "browser": {
-    "./src/index.js": "./dist/index.js",
-    "./src/index.mjs": "./dist/wagmi-connector.esm.js"
+    "./dist/index.js": "./dist/index.js",
+    "./dist/index.mjs": "./dist/index.mjs"
   },
-  "size-limit": [
-    {
-      "path": "dist/wagmi-connector.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/wagmi-connector.esm.js",
-      "limit": "10 KB"
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
-  ],
+  },
   "dependencies": {
     "@unipasswallet/ethereum-provider": "^1.0.1",
     "@unipasswallet/popup-types": "^1.0.1",
@@ -60,11 +49,7 @@
     "wagmi": "^0.11.0"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.1.2",
-    "husky": "^8.0.3",
-    "size-limit": "^8.1.2",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.5.0",
+    "tsup": "^6.6.0",
     "typescript": "^4.9.5"
   }
 }
