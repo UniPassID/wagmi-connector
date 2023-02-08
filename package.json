@@ -34,6 +34,10 @@
   },
   "author": "lay2",
   "module": "dist/wagmi-connector.esm.js",
+  "browser": {
+    "./dist/index.js": "./dist/index.js",
+    "./dist/index.mjs": "./dist/wagmi-connector.esm.js"
+  },
   "size-limit": [
     {
       "path": "dist/wagmi-connector.cjs.production.min.js",

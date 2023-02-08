@@ -1,7 +1,16 @@
-import { UniPassProvider, UniPassProviderOptions } from '@unipasswallet/ethereum-provider';
+import {
+  UniPassProvider,
+  UniPassProviderOptions,
+} from '@unipasswallet/ethereum-provider';
 import { UPAccount } from '@unipasswallet/popup-types';
 import { providers } from 'ethers';
-import { Address, Chain, Connector, ConnectorData, UserRejectedRequestError } from 'wagmi';
+import {
+  Address,
+  Chain,
+  Connector,
+  ConnectorData,
+  UserRejectedRequestError,
+} from 'wagmi';
 
 interface Options {
   connect: UniPassProviderOptions;
@@ -12,19 +21,25 @@ interface UniPassConnectorOptions {
   options: Options;
 }
 
-export class UniPassConnector extends Connector<UniPassProvider, Options | undefined> {
+export class UniPassConnector extends Connector<
+  UniPassProvider,
+  Options | undefined
+> {
   id = 'unipass';
   name = 'UniPass';
   ready = true;
 
   options: Options | undefined;
   provider: UniPassProvider;
-  upAccount?: UPAccount;
 
   constructor({ chains, options }: UniPassConnectorOptions) {
     super({ chains, options });
     this.options = options;
     this.provider = new UniPassProvider(options.connect);
+  }
+
+  public get upAccount() {
+    return this.getUpAccount();
   }
 
   async connect(): Promise<Required<ConnectorData<providers.Web3Provider>>> {
@@ -39,7 +54,6 @@ export class UniPassConnector extends Connector<UniPassProvider, Options | undef
 
     const chianId = this.provider.getChainId();
     const address = _account.address as Address;
-    this.upAccount = _account;
 
     return {
       account: address,
@@ -56,7 +70,7 @@ export class UniPassConnector extends Connector<UniPassProvider, Options | undef
   }
 
   async getAccount(): Promise<any> {
-    return Promise.resolve(this.upAccount?.address || "");
+    return Promise.resolve(this.upAccount?.address || '');
   }
 
   async getChainId(): Promise<number> {
@@ -70,7 +84,9 @@ export class UniPassConnector extends Connector<UniPassProvider, Options | undef
   async getSigner(): Promise<any> {
     const chainId = await this.getChainId();
     const account = await this.getAccount();
-    return Promise.resolve(new providers.Web3Provider(this.provider, chainId).getSigner(account));
+    return Promise.resolve(
+      new providers.Web3Provider(this.provider, chainId).getSigner(account)
+    );
   }
 
   async switchChain(chainId: number): Promise<Chain> {
@@ -100,5 +116,17 @@ export class UniPassConnector extends Connector<UniPassProvider, Options | undef
   protected onDisconnect() {
     // @ts-ignore-next-line
     this?.emit('disconnect');
+  }
+
+  private getUpAccount(): UPAccount | undefined {
+    try {
+      const sessionAccount = sessionStorage.getItem('UP-A');
+      const localAccount = localStorage.getItem('UP-A');
+      if (sessionAccount) return JSON.parse(sessionAccount);
+      if (localAccount) return JSON.parse(localAccount);
+    } catch {
+      return;
+    }
+    return;
   }
 }
