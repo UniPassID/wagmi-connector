@@ -25,14 +25,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "browser": {
-    "./dist/index.js": "./dist/index.js",
-    "./dist/index.mjs": "./dist/index.mjs"
-  },
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
+      "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
