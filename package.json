@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "Wagmi connector for the UniPass wallet",
   "license": "MIT",
-  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -35,8 +34,8 @@
   "author": "lay2",
   "module": "dist/wagmi-connector.esm.js",
   "browser": {
-    "./dist/index.js": "./dist/index.js",
-    "./dist/index.mjs": "./dist/wagmi-connector.esm.js"
+    "./src/index.js": "./dist/index.js",
+    "./src/index.mjs": "./dist/wagmi-connector.esm.js"
   },
   "size-limit": [
     {
