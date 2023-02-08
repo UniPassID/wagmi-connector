@@ -25,12 +25,6 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "dependencies": {
     "@unipasswallet/ethereum-provider": "^1.0.1",
     "@unipasswallet/popup-types": "^1.0.1",
