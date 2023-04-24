@@ -26,8 +26,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@unipasswallet/ethereum-provider": "^1.1.1",
-    "@unipasswallet/popup-types": "^1.1.1",
+    "@unipasswallet/ethereum-provider": "^1.1.9",
+    "@unipasswallet/popup-types": "^1.1.9",
     "ethers": "^5.7.2",
     "wagmi": "^0.11.0"
   },
