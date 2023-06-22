@@ -9,7 +9,10 @@ or
 ```shell
   yarn add @unipasswallet/wagmi-connector
 ```
-
+or
+```shell
+  pnpm add @unipasswallet/wagmi-connector
+```
 ## Parameters
 
 * `chains` -- Chains supported by app. This is the same parameter as would be passed to other RainbowKit wallets..
@@ -35,7 +38,7 @@ or
         appSettings: {
           appName: "wagmi demo",
           appIcon: "your icon url",
-          theme: UniPassTheme.dark,
+          theme: UniPassTheme.dark,w
         },
       },
     },
