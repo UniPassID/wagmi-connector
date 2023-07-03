@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/UniPassID/wagmi-connector/compare/v1.1.9...v1.2.0) (2023-07-03)
+
+
+### Features
+
+* update wagmi & add viem ([e239a4d](https://github.com/UniPassID/wagmi-connector/commit/e239a4d9c172defece3f54b4f743a42b4745d1fc))
+
 ### [1.1.9](https://github.com/UniPassID/wagmi-connector/compare/v0.0.1-alpha.4...v1.1.9) (2023-04-24)
 
 
