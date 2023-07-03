@@ -4,52 +4,51 @@ import {
 } from '@unipasswallet/ethereum-provider';
 import { UPAccount } from '@unipasswallet/popup-types';
 import { providers } from 'ethers';
+import { Address, Chain, Connector, WalletClient } from 'wagmi';
 import {
-  Address,
-  Chain,
-  Connector,
-  ConnectorData,
   UserRejectedRequestError,
-} from 'wagmi';
-
-interface Options {
-  connect: UniPassProviderOptions;
-}
+  ProviderRpcError,
+  createWalletClient,
+  custom,
+} from 'viem';
 
 interface UniPassConnectorOptions {
   chains?: Chain[];
-  options: Options;
+  options: UniPassProviderOptions;
 }
 
 export class UniPassConnector extends Connector<
   UniPassProvider,
-  Options | undefined
+  UniPassProviderOptions
 > {
   id = 'unipass';
   name = 'UniPass';
   ready = true;
 
-  options: Options | undefined;
+  options: UniPassProviderOptions;
   provider: UniPassProvider;
 
   constructor({ chains, options }: UniPassConnectorOptions) {
     super({ chains, options });
     this.options = options;
-    this.provider = new UniPassProvider(options.connect);
+    this.provider = new UniPassProvider(options);
   }
 
   public get upAccount() {
     return this.getUpAccount();
   }
 
-  async connect(): Promise<Required<ConnectorData<providers.Web3Provider>>> {
+  async connect() {
     let _account: any;
     try {
       // @ts-ignore-next-line
       this?.emit('message', { type: 'connecting' });
       _account = await this.provider.connect();
-    } catch (e) {
-      throw new UserRejectedRequestError(e);
+    } catch (error) {
+      if (/user rejected/i.test((error as ProviderRpcError)?.message)) {
+        throw new UserRejectedRequestError(error as Error);
+      }
+      throw error;
     }
 
     const chianId = this.provider.getChainId();
@@ -67,6 +66,22 @@ export class UniPassConnector extends Connector<
 
   async disconnect(): Promise<void> {
     await this.provider.disconnect();
+  }
+
+  async getWalletClient(): Promise<WalletClient> {
+    const [provider, account] = await Promise.all([
+      this.getProvider(),
+      this.getAccount(),
+    ]);
+    const chainId = await this.getChainId();
+    const chain = this.chains.find((x) => x.id === chainId);
+    if (!provider || !account) throw new Error('provider is required.');
+
+    return createWalletClient({
+      account: account as `0x${any}`,
+      chain,
+      transport: custom(provider),
+    });
   }
 
   async getAccount(): Promise<any> {
