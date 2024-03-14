@@ -21,6 +21,11 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniPassID/wagmi-connector.git"
+  },
+  "homepage": "https://github.com/UniPassID/wagmi-connector#readme",
   "author": "lay2",
   "type": "module",
   "main": "dist/index.js",
